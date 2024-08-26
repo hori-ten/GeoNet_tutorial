@@ -44,4 +44,4 @@ bash jobs/GeoPlaces.sh <source> <target> <Path for GeoPlaces dataset>
 ```
 python eval.py --nClasses 600 --checkpoint ./trained_model/best_model.pth.tar --data_dir ./data/GeoImNet/  --dataset GeoImNet --target asia
 ```
-※--nClassesは，データセットのクラス数を指定する引数です．GeoImNetの場合は600，GeoPlacesの場合は205としてください．
+※--nClassesは，データセットのクラス数を指定する引数です．GeoImNetの場合は600，GeoPlacesの場合は204としてください．
