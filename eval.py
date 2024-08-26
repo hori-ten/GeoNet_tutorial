@@ -132,4 +132,4 @@ if __name__ == '__main__':
     print(print_str3 + print_str4)
 
     # print macro-F1
-    print(macro_f1)
+    print('\nmacro-F1:{:.4f}'.format(macro_f1))
