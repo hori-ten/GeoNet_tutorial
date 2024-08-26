@@ -77,11 +77,6 @@ if __name__ == '__main__':
     parser.add_argument('--resnet', default="resnet50", help="Resnet backbone")
     parser.add_argument('--bn-dim', type=int, default=256, help="bottleneck embedding dimension")
 
-    ## Memory network
-    # parser.add_argument('--queue_size', type=int, default=24000, help="size of queue")
-    # parser.add_argument('--momentum', type=float, default=0, help="momentum value")
-    # parser.add_argument('--tau', type=float, default=0.07, help="temperature value")
-
 
     args = parser.parse_args() 
     out_dir = os.path.join("work_dirs" , args.dataset , args.out_dir )
