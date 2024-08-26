@@ -42,6 +42,6 @@ bash jobs/GeoPlaces.sh <source> <target> <Path for GeoPlaces dataset>
 例として，GeoImNetのUSAで学習したモデルを用いてAsiaの画像を識別する場合は，以下のように入力します．
 
 ```
-python eval.py --nClasses 600 --checkpoint ./trained_model/best_model.pth.tar --data_dir <Path for GeoImNet dataset>  --dataset GeoImNet --target asia
+python eval.py --nClasses 600 --checkpoint ./trained_model/best_model.pth.tar --data_dir ./data/GeoImNet/  --dataset GeoImNet --target asia
 ```
 ※--nClassesは，データセットのクラス数を指定する引数です．GeoImNetの場合は600，GeoPlacesの場合は205としてください．
