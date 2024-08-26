@@ -1,41 +1,34 @@
-# MemSAC (ECCV 2022)
-
-We present MemSAC (Memory Augmented Sample Consistency for Large-Scale Domain Adaptation) for unsupervised domain adaptation across datasets with many categories or fine-grained classes. 
-
-![MemSAC_Teaser](assets/Teaser_contrastive.jpg)
-
-## The following dependencies are required.
-
-- Ubuntu 18.04
-- Python==3.7.4
-- numpy==1.19.2
-- PyTorch==1.4.0, torchvision==0.6.0, cudatoolkit==10.1
-
-## Data
-
-The datasets can be downloaded using the following links.
-
-1. DomainNet: [http://ai.bu.edu/M3SDA/](http://ai.bu.edu/M3SDA/).
-2. CUB-Paintings: [https://drive.google.com/file/d/1G327KsD93eyGTjMmByuVy9sk4tlEOyK3/view?usp=sharing](https://drive.google.com/file/d/1G327KsD93eyGTjMmByuVy9sk4tlEOyK3/view?usp=sharing) (from [https://github.com/thuml/PAN](https://github.com/thuml/PAN)).
-
-Download the datasets into folder called `data/`.
+# GeoNetデータセットでの
 
 
-## Training model on DomainNet
 
-To train the model on DomainNet, run the following script.
+
+## データセット
+
+GeoNetデータセットは以下のリンクよりダウンロードできます．
+
+[GeoNet](https://tarun005.github.io/GeoNet/)
+
+`GeoNet/data/`というフォルダを新たに作成し，その中にダウンロードしたデータセットを入れてください．
+
+
+## モデルの学習
+
+GeoImNetを用いてモデルを学習する場合，以下のスクリプトを実行します．
+
 ```
-bash jobs/domainNet_345.sh <source> <target> <Path for DomainNet dataset> <queue_size>
+bash jobs/GeoImNet.sh <source> <target> <Path for GeoImNet dataset>
 ```
 
-For example,
+例として，USAのデータで学習し，Asiaのデータでテストをしたい場合は，
 ```
-bash jobs/domainNet_345.sh real clipart ./data/DomainNet/ 48000
+bash jobs/GeoImNet.sh usa asia ./data/GeoImNet/
 ```
+となります．
 
-To train the model on CUB-Drawings, run the following script.
+また，GeoPlacesを用いる場合は以下のようになります．
 ```
-bash jobs/cub200.sh <source> <target> <Path for cub2011 dataset> <queue_size>
+bash jobs/GeoPlaces.sh <source> <target> <Path for GeoPlaces dataset>
 ```
 
 ## Testing using trained model.
