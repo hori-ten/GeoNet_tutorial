@@ -9,7 +9,7 @@ GeoNetデータセットは以下のリンクよりダウンロードできま�
 
 [https://tarun005.github.io/GeoNet/](https://tarun005.github.io/GeoNet/)
 
-`GeoNet/data/`というフォルダを新たに作成し，その中にダウンロードしたデータセットを入れてください．
+`GeoNet_tutorial/data/`というフォルダを新たに作成し，その中にダウンロードしたデータセットを入れてください．
 
 
 ## モデルの学習
@@ -32,9 +32,16 @@ bash jobs/GeoPlaces.sh <source> <target> <Path for GeoPlaces dataset>
 
 ## 学習済モデルのテスト
 
-学習済モデルを用いてテストを行う場合は，以下の例のように入力してください．
+### 準備
+
+学習が終了すると，`GeoNet_tutorial/work_dirs/<dataset name>/<source><target>`の中に学習済モデル(best_model.pth.tar)が保存されます．
+`GeoNet_tutorial/trained_model/`というフォルダを新たに作成し，その中にbest_model.pth.tarを配置します．
+
+### テスト
+
+例として，GeoImNetのUSAで学習したモデルを用いてAsiaの画像を識別する場合は，以下のように入力します．
 
 ```
-python eval.py --nClasses 600 --checkpoint best_model.pth.tar --data_dir <Path for GeoImNet dataset>  --dataset GeoImNet --target asia
+python eval.py --nClasses 600 --checkpoint ./trained_model/best_model.pth.tar --data_dir <Path for GeoImNet dataset>  --dataset GeoImNet --target asia
 ```
 ※--nClassesは，データセットのクラス数を指定する引数です．GeoImNetの場合は600，GeoPlacesの場合は205としてください．
