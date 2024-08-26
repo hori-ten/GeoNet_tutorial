@@ -20,7 +20,7 @@ GeoImNetを用いてモデルを学習する場合，以下のスクリプトを
 bash jobs/GeoImNet.sh <source> <target> <Path for GeoImNet dataset>
 ```
 
-例として，USAのデータで学習する場合は以下のようになります．
+例として，USAのデータで学習し，Asiaのデータでテストをしたい場合は以下のようになります．
 ```
 bash jobs/GeoImNet.sh usa asia ./data/GeoImNet/
 ```
